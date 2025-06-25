@@ -1,33 +1,82 @@
-.input_name {
-  width: 100%;
-  max-width: 360px;
-  padding: 0.75rem 1.2rem;
-  margin: 1.5rem auto;
-  display: block;
-  font-size: 1.2rem;
+.filters {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-input,
+.filter-select {
+  flex: 1 1 250px;
   font-family: 'EB Garamond', serif;
-  background: radial-gradient(circle at 50% 50%, #3e2e5e, #1a102a);
-  color: #f0e6d2;
-  border: 2px solid #bba86b;
+  font-size: 1.2rem;
   border-radius: 10px;
+  padding: 0.6rem 1rem;
+  transition: all 0.3s ease;
+  background: radial-gradient(circle at 50% 50%, #3e2e5e, #1a102a);
+  border: 2px solid #bba86b;
+  color: #f0e6d2;
   box-shadow:
     0 0 4px rgba(255, 255, 255, 0.08),
     inset 0 0 2px rgba(255, 255, 255, 0.04);
-  transition: all 0.3s ease;
+}
 
-  &::placeholder {
-    color: #d9c8a9;
-    font-style: italic;
+.filter-input::placeholder {
+  color: #d9c8a9;
+  font-style: italic;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 255, 240, 0.7); /* blanc suau amb toc daurat */
+  border-color: #fffbe6;
+  background: radial-gradient(circle at 50% 50%, #4d396d, #22163d);
+}
+
+/* Estil específic per al select */
+.filter-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, #bba86b 50%),
+    linear-gradient(135deg, #bba86b 50%, transparent 50%),
+    radial-gradient(circle at center, #3e2e5e, #1a102a);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    center;
+  background-size: 5px 5px, 5px 5px, 100% 100%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* Opcions */
+.filter-select option {
+  background-color: #1a102a;
+  color: #f0e6d2;
+  padding: 0.4rem 0.6rem;
+  font-family: 'EB Garamond', serif;
+}
+
+/* Responsive mòbil */
+@media (max-width: 480px) {
+  .filters {
+    flex-direction: column;
   }
 
-  &:focus {
-    outline: none;
-    border-color: #ffe28a;
-    box-shadow:
-      0 0 2px #fff6d4,
-      0 0 5px #ffe28a,
-      0 0 8px #ffd93b;
-    background: radial-gradient(circle at 50% 50%, #4d396d, #22163d);
+  .filter-input,
+  .filter-select {
+    flex: 1 1 100%;
   }
 }
+
+
+
+
+
 

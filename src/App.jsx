@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './styles/App.scss'
 import Header from './components/Header';
-import FilterName from './components/FilterName';
+import Filters from './components/Filters';
 import ListCharacters from './components/ListCharacters';
 import CardsCharacters from './components/CardsCharacters';
 
@@ -18,12 +18,11 @@ function App() {
 
   }, [])
   
-  
 
   return (
     <>
       <Header/>
-      <FilterName/>
+      <Filters/>
      
     </>
   )
