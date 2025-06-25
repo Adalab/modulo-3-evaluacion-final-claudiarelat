@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './styles/App.scss'
+import Header from './components/Header'
 
 function App() {
   
 
   return (
     <>
-      <h1>Hogwarts School of Witchcraft and Wizardry</h1>
+      <Header />
      
     </>
   )

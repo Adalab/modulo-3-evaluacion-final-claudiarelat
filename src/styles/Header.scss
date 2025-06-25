@@ -1,0 +1,79 @@
+@font-face {
+  font-family: 'HarryP';
+  src: url('/fonts/HarryP.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600&display=swap');
+
+.header {
+  text-align: center;
+  padding: 2.5rem 1rem 1rem;
+  font-family: 'EB Garamond', serif;
+
+  &__title {
+    font-size: 5rem;
+    font-family: 'HarryP', serif;
+    margin: 0;
+    letter-spacing: 2px;
+
+    color: #ffe28a;
+
+    text-shadow:
+      -2px -2px 3px #000,
+       2px -2px 3px #000,
+      -2px  2px 3px #000,
+       2px  2px 3px #000,
+       0 0 12px #ffec87,
+       0 0 24px #ffd93b,
+       0 0 36px #ffdb3b;
+
+    animation: flicker 3s infinite alternate;
+  }
+
+  &__subtitle {
+    font-size: 2.4rem;
+    margin-top: 0.5rem;
+    color: #dcdcdc;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px #000;
+  }
+
+  &__text {
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    color: #dcdcdc;
+    font-weight: 300;
+    text-shadow: 1px 1px 3px #000;
+  }
+}
+
+@keyframes flicker {
+  0% {
+    text-shadow:
+      -2px -2px 3px #000,
+       2px -2px 3px #000,
+      -2px  2px 3px #000,
+       2px  2px 3px #000,
+       0 0 10px #ffe28a,
+       0 0 20px #fff48f,
+       0 0 30px #ffd93b;
+  }
+  100% {
+    text-shadow:
+      -2px -2px 3px #000,
+       2px -2px 3px #000,
+      -2px  2px 3px #000,
+       2px  2px 3px #000,
+       0 0 15px #fff8b5,
+       0 0 30px #ffd93b,
+       0 0 45px #ffe55b;
+  }
+}
+
+
+
+
+
+
