@@ -1,0 +1,59 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.card {
+  background: linear-gradient(145deg, #2b2a4a, #1b1a2f);
+  border: 2.5px solid #ffd93b; /* daurat */
+  border-radius: 12px;
+  box-shadow:
+    0 0 8px #ffd93baa,
+    inset 0 0 10px #ffec87aa;
+  color: #fff8b5;
+  font-family: 'EB Garamond', serif;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow:
+      0 0 15px #ffd93bdd,
+      inset 0 0 20px #fff48faa;
+  }
+
+  &__image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-bottom: 2.5px solid #ffd93b;
+  }
+
+  &__content {
+    padding: 1rem 1.2rem;
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+    color: #fff2a8;
+    text-shadow:
+      1px 1px 2px #0008;
+  }
+
+  &__species,
+  &__house {
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+    text-shadow: 1px 1px 3px #000a;
+  }
+
+  &__house {
+    font-weight: 600;
+    color: #ffd93b;
+  }
+}

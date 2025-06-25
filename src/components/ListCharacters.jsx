@@ -1,4 +1,4 @@
-const url = 'https://hp-api.onrender.com/api/characters'; 
+// const url = 'https://hp-api.onrender.com/api/characters'; 
 
 function ListCharacters() {
 

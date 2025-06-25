@@ -1,0 +1,33 @@
+.input_name {
+  width: 100%;
+  max-width: 360px;
+  padding: 0.75rem 1.2rem;
+  margin: 1.5rem auto;
+  display: block;
+  font-size: 1.2rem;
+  font-family: 'EB Garamond', serif;
+  background: radial-gradient(circle at 50% 50%, #3e2e5e, #1a102a);
+  color: #f0e6d2;
+  border: 2px solid #bba86b;
+  border-radius: 10px;
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.08),
+    inset 0 0 2px rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: #d9c8a9;
+    font-style: italic;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #ffe28a;
+    box-shadow:
+      0 0 2px #fff6d4,
+      0 0 5px #ffe28a,
+      0 0 8px #ffd93b;
+    background: radial-gradient(circle at 50% 50%, #4d396d, #22163d);
+  }
+}
+
