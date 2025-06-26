@@ -3,9 +3,15 @@
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   padding: 2rem;
+  align-items: start;
 }
 
 .card {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(145deg, #2b2a4a, #1b1a2f);
   border: 2px solid #bba86b;
   border-radius: 12px;
@@ -26,18 +32,26 @@
     inset 0 0 10px rgba(255, 255, 240, 0.1);
 }
 
+.card__image-wrapper {
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 2px solid #bba86b;
+}
+
 .card__image {
   width: 100%;
-  height: 280px;
+  height: 100%;
   object-fit: cover;
   object-position: top center;
-  border-bottom: 2px solid #bba86b;
+  display: block;
 }
 
 .card__content {
   display: flex;
   flex-direction: column;
   padding: 0.25rem 1.2rem 0.4rem 1.2rem;
+  flex-grow: 1;
 }
 
 .card__name {
@@ -91,12 +105,11 @@
   .cards-container {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
-  .card__image {
-    height: 240px;
-  }
+
   .card__name {
     font-size: 1.1rem;
   }
+
   .card__species,
   .card__house {
     font-size: 1rem;
@@ -109,25 +122,28 @@
     gap: 1rem;
     padding: 1rem;
   }
-  .card__image {
-    height: 200px;
-  }
+
   .card__name {
     font-size: 1rem;
     margin-top: 0.3rem;
     margin-bottom: 0.2rem;
   }
+
   .card__species,
   .card__house {
     font-size: 0.9rem;
   }
+
   .card__content {
     padding: 0.2rem 0.8rem 0.3rem 0.8rem;
   }
+
   .card__house {
     margin-bottom: 0.5rem;
   }
 }
+
+
 
 
 

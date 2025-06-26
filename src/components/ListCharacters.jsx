@@ -1,24 +1,16 @@
+import '../styles/Cards.scss';
+import CharacterCard from './CharacterCard';
 
-// function ListCharacters({ charactersList }) {
+function ListCharacters({ charactersList }) {
+  return (
+    <section className="cards-container">
+      {charactersList.map((item, index) => (
+        <CharacterCard key={index} char={item} />
+      ))}
+    </section>
+  );
+}
 
-//     return (
-//         <section>
-            
-//             {charactersList.map((item) => (
-//                 <article key={item.id}>
-//                     <img src="" alt="" />
-//                     <div>
-//                         <h3>{item.name}</h3>
-//                         <p>{item.species}</p>
-//                         <p>{item.house}</p>
-//                     </div>
+export default ListCharacters;
 
-//                 </article>
 
-//             ))}
-
-//         </section>
-//     )
-// }
-
-// export default ListCharacters; 

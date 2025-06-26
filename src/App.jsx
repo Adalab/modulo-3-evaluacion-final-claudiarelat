@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './styles/App.scss'
 import Header from './components/Header';
 import Filters from './components/Filters';
-import CardsCharacters from './components/CardsCharacters';
+import ListCharacters from './components/ListCharacters';
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
     <>
       <Header/>
       <Filters inputName={filterName} psetFilterName={setFilterName}/>
-      <CardsCharacters charactersList={filteredName}/>
+      <ListCharacters charactersList={filteredName}/>
     </>
   )
 }
