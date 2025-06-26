@@ -100,6 +100,15 @@
   text-shadow: 0 0 5px #2ecc7188;
 }
 
+.no-results {
+  padding: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #999;
+  font-style: italic;
+}
+
+
 /* Media queries per fer les targetes més responsives */
 @media (max-width: 900px) {
   .cards-container {

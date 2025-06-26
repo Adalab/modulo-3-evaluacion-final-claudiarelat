@@ -1,11 +1,17 @@
 import '../styles/Filters.scss';
 
-function Filters({ inputName, psetFilterName }) {
+function Filters({ inputName, setInputName, selectHouse, setSelectHouse }) {
 
   const handleNameChange = (ev) => {
     ev.preventDefault(); 
 
-    psetFilterName(ev.target.value); 
+    setInputName(ev.target.value); 
+  }
+
+  const handleHouseChange = (ev) => {
+    ev.preventDefault();
+    
+    setSelectHouse(ev.target.value);
   }
 
   return (
@@ -23,7 +29,8 @@ function Filters({ inputName, psetFilterName }) {
       <select
         className="filter-select"
         name="house"
-        // onChange={handleHouseChange}
+        value={selectHouse}
+        onChange={handleHouseChange}
         defaultValue="all"
       >
         <option value="all">✨ All houses</option>
@@ -31,6 +38,7 @@ function Filters({ inputName, psetFilterName }) {
         <option value="Slytherin">🐍 Slytherin</option>
         <option value="Ravenclaw">🦅 Ravenclaw</option>
         <option value="Hufflepuff">🦡 Hufflepuff</option>
+        <option value="Unknown">❓ Unknown</option>
       </select>
     </form>
   );

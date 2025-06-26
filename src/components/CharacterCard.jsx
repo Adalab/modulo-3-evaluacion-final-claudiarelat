@@ -13,7 +13,7 @@ function CharacterCard({ char }) {
       case 'slytherin':
         return 'slytherin';
       default:
-        return 'no-house';
+        return 'Unknown';
     }
   };
 

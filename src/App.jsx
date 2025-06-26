@@ -19,14 +19,31 @@ function App() {
 
   const [filterName, setFilterName] = useState(''); 
 
-  const filteredName = characters.filter(character => character.name.toLowerCase().includes(filterName.toLowerCase())); 
-  
+  const [filterHouse, setFilterHouse] = useState('all'); 
+
+  const filtered = characters
+  .filter(character =>
+    character.name.toLowerCase().includes(filterName.toLowerCase())
+  )
+  .filter(character => {
+    if (filterHouse === 'all') return true;
+    if (filterHouse === 'Unknown') return character.house === '';
+    return character.house === filterHouse;
+  });
+
 
   return (
     <>
       <Header/>
-      <Filters inputName={filterName} psetFilterName={setFilterName}/>
-      <ListCharacters charactersList={filteredName}/>
+      <Filters inputName={filterName} setInputName={setFilterName} selectHouse={filterHouse} setSelectHouse={setFilterHouse}/>
+      
+      {filtered.length === 0 ? (
+      <p className="no-results">
+      No characters match the name ‘{filterName}’.
+      </p>
+      ) : (
+      <ListCharacters charactersList={filtered} />
+      )}
     </>
   )
 }
