@@ -36,8 +36,8 @@ function CardsCharacters({ charactersList }) {
 
   return (
     <section className="cards-container">
-      {charactersList.map((char) => (
-        <article key={char.id} className="card">
+      {charactersList.map((char, index) => (
+        <article key={index} className="card">
           <img
             src={char.image || 'https://placehold.co/220x280/black/white?text=Absconditus!&font=PlayfairDisplay'}
             alt={char.image ? char.name : 'No image available'}

@@ -1,6 +1,13 @@
 import '../styles/Filters.scss';
 
-function Filters({ handleNameChange, handleHouseChange }) {
+function Filters({ inputName, psetFilterName }) {
+
+  const handleNameChange = (ev) => {
+    ev.preventDefault(); 
+
+    psetFilterName(ev.target.value); 
+  }
+
   return (
     <form className="filters" onSubmit={e => e.preventDefault()}>
       <input
@@ -8,6 +15,7 @@ function Filters({ handleNameChange, handleHouseChange }) {
         type="search"
         name="search"
         placeholder="Search by character name"
+        value={inputName}
         autoComplete="off"
         onChange={handleNameChange}
       />
@@ -15,7 +23,7 @@ function Filters({ handleNameChange, handleHouseChange }) {
       <select
         className="filter-select"
         name="house"
-        onChange={handleHouseChange}
+        // onChange={handleHouseChange}
         defaultValue="all"
       >
         <option value="all">✨ All houses</option>

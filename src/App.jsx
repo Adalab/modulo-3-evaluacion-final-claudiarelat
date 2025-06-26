@@ -6,7 +6,7 @@ import CardsCharacters from './components/CardsCharacters';
 
 function App() {
 
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState([]); //array vacío
 
   useEffect(() => {
     fetch("https://hp-api.onrender.com/api/characters")
@@ -16,13 +16,17 @@ function App() {
     })
 
   }, [])
+
+  const [filterName, setFilterName] = useState(''); 
+
+  const filteredName = characters.filter(character => character.name.toLowerCase().includes(filterName.toLowerCase())); 
   
 
   return (
     <>
       <Header/>
-      <Filters/>
-      <CardsCharacters charactersList={characters}/>
+      <Filters inputName={filterName} psetFilterName={setFilterName}/>
+      <CardsCharacters charactersList={filteredName}/>
     </>
   )
 }
