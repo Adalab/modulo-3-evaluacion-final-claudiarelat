@@ -7,53 +7,131 @@
 
 .card {
   background: linear-gradient(145deg, #2b2a4a, #1b1a2f);
-  border: 2.5px solid #ffd93b; /* daurat */
+  border: 2px solid #bba86b;
   border-radius: 12px;
   box-shadow:
-    0 0 8px #ffd93baa,
-    inset 0 0 10px #ffec87aa;
-  color: #fff8b5;
+    0 0 6px rgba(255, 255, 255, 0.1),
+    inset 0 0 4px rgba(255, 255, 255, 0.05);
+  color: #f0e6d2;
   font-family: 'EB Garamond', serif;
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  &:hover {
-    transform: scale(1.05);
-    box-shadow:
-      0 0 15px #ffd93bdd,
-      inset 0 0 20px #fff48faa;
+.card:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 12px rgba(255, 255, 240, 0.4),
+    inset 0 0 10px rgba(255, 255, 240, 0.1);
+}
+
+.card__image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  border-bottom: 2px solid #bba86b;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem 1.2rem 0.4rem 1.2rem;
+}
+
+.card__name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-top: 0.4rem;
+  margin-bottom: 0.3rem;
+  color: #fff2a8;
+  text-shadow: 1px 1px 2px #0008;
+  line-height: 1.2;
+}
+
+.card__species {
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 3px #000a;
+  margin-top: auto;
+  margin-bottom: 0.1rem;
+}
+
+.card__house {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #e7e7e7;
+  text-shadow: 1px 1px 3px #000a;
+  margin-top: 0.2rem;
+  margin-bottom: 0.8rem;
+}
+
+.card__house.gryffindor {
+  color: #e74c3c;
+  text-shadow: 0 0 5px #e74c3c88;
+}
+
+.card__house.hufflepuff {
+  color: #f1c40f;
+  text-shadow: 0 0 5px #f1c40f88;
+}
+
+.card__house.ravenclaw {
+  color: #3498db;
+  text-shadow: 0 0 5px #3498db88;
+}
+
+.card__house.slytherin {
+  color: #2ecc71;
+  text-shadow: 0 0 5px #2ecc7188;
+}
+
+/* Media queries per fer les targetes més responsives */
+@media (max-width: 900px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
-
-  &__image {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
-    border-bottom: 2.5px solid #ffd93b;
+  .card__image {
+    height: 240px;
   }
-
-  &__content {
-    padding: 1rem 1.2rem;
-  }
-
-  &__name {
-    font-size: 1.6rem;
-    font-weight: 700;
-    margin-bottom: 0.3rem;
-    color: #fff2a8;
-    text-shadow:
-      1px 1px 2px #0008;
-  }
-
-  &__species,
-  &__house {
+  .card__name {
     font-size: 1.1rem;
-    margin-bottom: 0.2rem;
-    text-shadow: 1px 1px 3px #000a;
   }
-
-  &__house {
-    font-weight: 600;
-    color: #ffd93b;
+  .card__species,
+  .card__house {
+    font-size: 1rem;
   }
 }
+
+@media (max-width: 480px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .card__image {
+    height: 200px;
+  }
+  .card__name {
+    font-size: 1rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.2rem;
+  }
+  .card__species,
+  .card__house {
+    font-size: 0.9rem;
+  }
+  .card__content {
+    padding: 0.2rem 0.8rem 0.3rem 0.8rem;
+  }
+  .card__house {
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+
+
+
+
+

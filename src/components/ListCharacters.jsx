@@ -1,12 +1,24 @@
-// const url = 'https://hp-api.onrender.com/api/characters'; 
 
-function ListCharacters() {
+// function ListCharacters({ charactersList }) {
 
-    return (
-        <>
-        
-        </>
-    )
-}
+//     return (
+//         <section>
+            
+//             {charactersList.map((item) => (
+//                 <article key={item.id}>
+//                     <img src="" alt="" />
+//                     <div>
+//                         <h3>{item.name}</h3>
+//                         <p>{item.species}</p>
+//                         <p>{item.house}</p>
+//                     </div>
 
-export default ListCharacters; 
+//                 </article>
+
+//             ))}
+
+//         </section>
+//     )
+// }
+
+// export default ListCharacters; 

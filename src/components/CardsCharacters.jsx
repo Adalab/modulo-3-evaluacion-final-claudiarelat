@@ -1,19 +1,55 @@
 import '../styles/Cards.scss';
 
-function CardsCharacters({ characters }) {
+function CardsCharacters({ charactersList }) {
+
+  const getHouseClass = (house) => {
+  switch (house.toLowerCase()) {
+    case 'gryffindor':
+      return 'gryffindor';
+    case 'hufflepuff':
+      return 'hufflepuff';
+    case 'ravenclaw':
+      return 'ravenclaw';
+    case 'slytherin':
+      return 'slytherin';
+    default:
+      return 'no-house';
+    }
+  };
+
+
+  const getHouseIcon = (house) => {
+  switch ((house || '').toLowerCase()) {
+    case 'gryffindor':
+      return '🦁';
+    case 'hufflepuff':
+      return '🦡';
+    case 'ravenclaw':
+      return '🦅';
+    case 'slytherin':
+      return '🐍';
+    default:
+      return '❓'; 
+    }
+  };
+
+
   return (
     <section className="cards-container">
-      {characters.map((char) => (
-        <article key={char.name} className="card">
+      {charactersList.map((char) => (
+        <article key={char.id} className="card">
           <img
-            src={char.image || 'https://via.placeholder.com/220x280?text=No+Image'}
-            alt={char.name}
+            src={char.image || 'https://placehold.co/220x280/black/white?text=Absconditus!&font=PlayfairDisplay'}
+            alt={char.image ? char.name : 'No image available'}
             className="card__image"
           />
           <div className="card__content">
             <h3 className="card__name">{char.name}</h3>
             <p className="card__species">Species: {char.species || 'Unknown'}</p>
-            <p className="card__house">House: {char.house || 'No House'}</p>
+            <p className={`card__house ${getHouseClass(char.house || '')}`}>
+              House: {getHouseIcon(char.house)} {char.house || 'Unknown'}
+            </p>
+
           </div>
         </article>
       ))}

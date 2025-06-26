@@ -7,7 +7,7 @@ function Filters({ handleNameChange, handleHouseChange }) {
         className="filter-input"
         type="search"
         name="search"
-        placeholder="Search by name"
+        placeholder="Search by character name"
         autoComplete="off"
         onChange={handleNameChange}
       />
@@ -18,7 +18,7 @@ function Filters({ handleNameChange, handleHouseChange }) {
         onChange={handleHouseChange}
         defaultValue="all"
       >
-        <option value="all">All houses</option>
+        <option value="all">✨ All houses</option>
         <option value="Gryffindor">🦁 Gryffindor</option>
         <option value="Slytherin">🐍 Slytherin</option>
         <option value="Ravenclaw">🦅 Ravenclaw</option>
