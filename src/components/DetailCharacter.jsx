@@ -13,7 +13,7 @@ function DetailCharacter({ detailcharacterlist }) {
 
   return (
     <section className="detail-section">
-        <h1 className="title">Harry Potter</h1>
+        <h1 className="second-title">Harry Potter</h1>
         <article className="detail-card">
             <div className="detail-card__image-wrapper">
                 <img
@@ -24,12 +24,17 @@ function DetailCharacter({ detailcharacterlist }) {
             </div>
             <div className="detail-card__content">
                 <h3 className="detail-card__name">{character.name}</h3>
-                <p className="detail-card__text">Alternate Names: {character.alternate_names || 'None'}</p>
-                <p className="detail-card__text">Species: {character.species || 'Unknown'}</p>
-                <p className="detail-card__text">Gender: {character.gender || 'Non-binary'}</p>
-                <p className="detail-card__text">Status: {character.alive ? 'Alive' : 'Dead'}</p>
+                <p className="detail-card__text"><strong>Species: </strong>{character.species || 'Unknown'}</p>
+                <p className="detail-card__text"><strong>Gender: </strong>{character.gender || 'Non-binary'}</p>
+                <p className="detail-card__text"><strong>Status: </strong>{character.alive ? 'alive' : 'dead'}</p>
                 <p className={`card__house ${getHouseClass(character.house)}`}>
                     House: {getHouseIcon(character.house)} {character.house || 'Unknown'}
+                </p>
+                <p className="detail-card__text">
+                  <strong>Alternate Names:</strong>{' '}
+                  {character.alternate_names && character.alternate_names.length > 0
+                  ? character.alternate_names.join(', ')
+                  : 'none'}
                 </p>
             </div>
         </article>
