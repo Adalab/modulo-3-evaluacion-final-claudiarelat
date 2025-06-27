@@ -32,6 +32,13 @@
     inset 0 0 10px rgba(255, 255, 240, 0.1);
 }
 
+.card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+
 .card__image-wrapper {
   aspect-ratio: 4 / 5;
   width: 100%;

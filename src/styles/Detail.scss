@@ -1,0 +1,145 @@
+.title {
+  font-size: 5.2rem;
+  font-family: 'HarryP', serif;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  word-spacing: -0.2em;
+
+  color: #ffe28a;
+
+  text-shadow:
+    -2px -2px 3px #000,
+     2px -2px 3px #000,
+    -2px  2px 3px #000,
+     2px  2px 3px #000,
+     0 0 12px #ffec87,
+     0 0 24px #ffd93b,
+     0 0 36px #ffdb3b;
+
+  animation: flicker 3s infinite alternate;
+}
+
+.detail-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 2rem;
+  color: #f0e6d2;
+  font-family: 'EB Garamond', serif;
+  box-sizing: border-box;
+  overflow: hidden; // Evita scroll vertical
+}
+
+.detail-card {
+  display: flex;
+  flex-direction: row;
+  background: linear-gradient(145deg, #2b2a4a, #1b1a2f);
+  border: 2px solid #bba86b;
+  border-radius: 12px;
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.1),
+    inset 0 0 6px rgba(255, 255, 255, 0.05);
+  max-width: 900px;
+  width: 100%;
+
+  height: auto;
+  max-height: 600px;
+  overflow: hidden;
+}
+
+.detail-card__image-wrapper {
+  width: 40%;
+  max-width: 360px;
+  height: 100%;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.detail-card__image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.detail-card__content {
+  width: 60%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+  overflow-y: auto;
+}
+
+.detail-card__name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff2a8;
+  text-shadow: 1px 1px 2px #0008;
+}
+
+.detail-card__text {
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px #000a;
+}
+
+.card__house {
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 3px #000a;
+
+  &.gryffindor {
+    color: #e74c3c;
+    text-shadow: 0 0 5px #e74c3c88;
+  }
+
+  &.hufflepuff {
+    color: #f1c40f;
+    text-shadow: 0 0 5px #f1c40f88;
+  }
+
+  &.ravenclaw {
+    color: #3498db;
+    text-shadow: 0 0 5px #3498db88;
+  }
+
+  &.slytherin {
+    color: #2ecc71;
+    text-shadow: 0 0 5px #2ecc7188;
+  }
+}
+
+/* Responsiu */
+@media (max-width: 768px) {
+  .detail-card {
+    flex-direction: column;
+    height: auto;
+    max-height: none;
+  }
+
+  .detail-card__image-wrapper {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .detail-card__content {
+    width: 100%;
+    padding: 1.5rem;
+  }
+}
+
+
+
+
+
+
+

@@ -31,7 +31,6 @@ function Filters({ inputName, setInputName, selectHouse, setSelectHouse }) {
         name="house"
         value={selectHouse}
         onChange={handleHouseChange}
-        defaultValue="all"
       >
         <option value="all">✨ All houses</option>
         <option value="Gryffindor">🦁 Gryffindor</option>
