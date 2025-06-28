@@ -1,4 +1,4 @@
-import { useParams } from 'react-router';
+import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/Detail.scss'; 
 import { getHouseClass, getHouseIcon } from '../services/houseUtils';
 
@@ -6,6 +6,14 @@ function DetailCharacter({ detailcharacterlist }) {
   const { id } = useParams();
 
   const character = detailcharacterlist.find((char) => char.id === id);
+  const navigate = useNavigate();
+
+  const getGenderSymbol = (gender) => {
+  if (gender === 'female') return '♀️';
+  if (gender === 'male') return '♂️';
+  return '⚧️';
+};
+
 
   if (!character) {
     return <p>Character not found</p>;
@@ -14,6 +22,9 @@ function DetailCharacter({ detailcharacterlist }) {
   return (
     <section className="detail-section">
         <h1 className="second-title">Harry Potter</h1>
+        {/* <button className="back-button" onClick={() => navigate('/')}>
+          ← Back to Characters
+        </button> */}
         <article className="detail-card">
             <div className="detail-card__image-wrapper">
                 <img
@@ -25,8 +36,11 @@ function DetailCharacter({ detailcharacterlist }) {
             <div className="detail-card__content">
                 <h3 className="detail-card__name">{character.name}</h3>
                 <p className="detail-card__text"><strong>Species: </strong>{character.species || 'Unknown'}</p>
-                <p className="detail-card__text"><strong>Gender: </strong>{character.gender || 'Non-binary'}</p>
-                <p className="detail-card__text"><strong>Status: </strong>{character.alive ? 'alive' : 'dead'}</p>
+                <p className="detail-card__text">
+                  <strong>Gender: </strong>
+                  {character.gender || 'non-binary'} {getGenderSymbol(character.gender)}
+                </p>
+                <p className="detail-card__text"><strong>Status: </strong>{character.alive ? 'alive🫀' : 'dead💀'}</p>
                 <p className={`card__house ${getHouseClass(character.house)}`}>
                     House: {getHouseIcon(character.house)} {character.house || 'Unknown'}
                 </p>

@@ -11,5 +11,8 @@ body {
   background-attachment: fixed;
 }
 
+body::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari i Edge */
+}
 
 

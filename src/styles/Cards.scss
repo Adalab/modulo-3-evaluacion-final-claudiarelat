@@ -1,6 +1,6 @@
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 1.5rem;
   padding: 2rem;
   align-items: start;
@@ -119,7 +119,7 @@
 /* Media queries per fer les targetes més responsives */
 @media (max-width: 900px) {
   .cards-container {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   }
 
   .card__name {

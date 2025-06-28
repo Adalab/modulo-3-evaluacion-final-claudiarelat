@@ -21,17 +21,41 @@
   animation: flicker 3s infinite alternate;
 }
 
+// .back-button {
+//   position: absolute;
+//   top: -1.5rem; // ajusta segons calgui
+//   left: 50%;
+//   transform: translateX(-50%);
+//   background-color: #443C68;
+//   color: white;
+//   border: none;
+//   border-radius: 0.5rem;
+//   padding: 0.5rem 1rem;
+//   font-size: 1rem;
+//   cursor: pointer;
+//   z-index: 10;
+//   transition: background 0.3s;
+//   margin-top: 1.5rem;
+
+//   &:hover {
+//     background-color: #635985;
+//   }
+// }
+
+
 
 .detail-section {
   max-width: 900px;
   margin: 2rem auto;
   padding: 0 1rem;
-  // overflow-y: hidden;
+  // margin-top: 2rem;
+  // padding-top: 2rem;
+  position: relative;
 }
 
-.detail-section::-webkit-scrollbar {
-  display: none; /* per a Chrome, Safari i Edge */
-}
+// .detail-section::-webkit-scrollbar {
+//   display: none; 
+// }
 
 
 .detail-card {
@@ -149,6 +173,7 @@
   text-shadow: 0 0 5px #2ecc7188;
 }
 
+
 @media (max-width: 768px) {
 
 
@@ -162,10 +187,10 @@
 
   .detail-card__image-wrapper {
     width: 160px;
-    height: 200px;
+    height: 250px;
     border-radius: 10px 10px 0 0;
     border-right: none;
-    border-bottom: 2px solid #bba86b;
+    // border-bottom: 2px solid #bba86b;
     padding: 0.3rem;
     background: #1b1a2f;
     display: flex;
@@ -198,7 +223,7 @@
 
   .second-title {
     font-size: 4rem;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0 2.7rem 0;
     text-align: center;
   }
 }
